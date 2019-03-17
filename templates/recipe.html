@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+  <!-- Display information about the given recipe. Be sure to show its image, also. -->
+  	<div class="media">
+	  <img src="{{ recipe.image }}" class="align-self-center mr-3 recipe-image" alt="...">
+	  <div class="media-body">
+	    <h5 class="mt-0">{{ recipe.name }}</h5>
+	    <p>{{ recipe.description }}</p>
+	    <p class="mb-0 ingredients-text">{{ recipe.ingredients }}</p>
+	  </div>
+	</div>
+</div>
+
+  {% endblock %}

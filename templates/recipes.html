@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+  <!-- List all the recipes that have been 'passed in' to this template's context.
+    Also show a button to add a new recipe, in an appropriate part of the page. -->
+    {% for recipe in recipes%}
+    <div class="list-group m-2">
+	  <a href="{{ url_for ('show_recipe', recipe_id=recipe.id) }}" class="list-group-item list-group-item-action">
+	    <span class="text-dark">{{ recipe.name }}</span> <span class="text-muted float-right">{{ recipe.description }}</span>
+	  </a>
+	</div>
+    {% endfor %}
+    <a href ="{{ url_for('add_recipe') }}" class="btn btn-primary m-2">Add Recipe</a>
+</div>
+
+{% endblock %}
